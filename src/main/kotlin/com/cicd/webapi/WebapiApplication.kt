@@ -27,3 +27,11 @@ class HealthController {
 		return "Server healthy!"
 	}
 }
+
+@RestController
+class DateController {
+	@GetMapping("/date")
+	fun getCurrentDate(): String {
+		return "Current date and time: ${java.time.LocalDate.now()}"
+	}
+}
