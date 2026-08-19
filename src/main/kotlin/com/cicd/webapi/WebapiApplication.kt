@@ -14,9 +14,16 @@ fun main(args: Array<String>) {
 
 @RestController
 class HelloController {
-	// Define a simple endpoint that returns a greeting message
 	@GetMapping("/hello")
 	fun sayHello(): String {
 		return "Hello CI/CD World!"
+	}
+}
+
+@RestController
+class HealthController {
+	@GetMapping("/health")
+	fun healthCheck(): String {
+		return "Server healthy!"
 	}
 }
