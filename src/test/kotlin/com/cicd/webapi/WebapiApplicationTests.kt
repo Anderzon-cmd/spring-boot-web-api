@@ -44,7 +44,7 @@ class WebapiApplicationTests {
 		mockMvc.perform(get("/date")
 			.accept(MediaType.TEXT_PLAIN))
 			.andExpect ( status().isOk() )
-			.andExpect ( content().string("Current date and time: ${java.time.LocalDateTime.now()}"))
+			.andExpect ( content().string("Current date and time: ${java.time.LocalDate.now()}"))
 	}
 
 }
