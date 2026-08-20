@@ -20,4 +20,11 @@ class Calculator {
 
         return a/b
     }
+
+    fun factorial(n: Int): Long {
+        if (n < 0) {
+            throw IllegalArgumentException("Cannot calculate factorial of negative numbers")
+        }
+        return if (n == 0) 1 else n * factorial(n - 1)
+    }
 }
