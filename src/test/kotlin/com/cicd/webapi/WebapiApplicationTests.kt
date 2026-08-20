@@ -24,10 +24,27 @@ class WebapiApplicationTests {
 	}
 
 	@Test
+	fun checkHelloResponse() {
+		mockMvc.perform(get("/")
+			.accept(MediaType.TEXT_PLAIN))
+			.andExpect ( status().isOk() )
+			.andExpect ( content().string("Hello CI/CD World!") )
+	}
+
+	@Test
 	fun checkHealthyResponse() {
 		mockMvc.perform(get("/health")
 			.accept(MediaType.TEXT_PLAIN))
-			.andExpect { status().isOk() }
-			.andExpect { content().string("Server healthy!") }
+			.andExpect ( status().isOk() )
+			.andExpect ( content().string("Server healthy!") )
 	}
+
+	@Test
+	fun checkDateResponse() {
+		mockMvc.perform(get("/date")
+			.accept(MediaType.TEXT_PLAIN))
+			.andExpect ( status().isOk() )
+			.andExpect ( content().string("Current date and time: ${java.time.LocalDate.now()}"))
+	}
+
 }
