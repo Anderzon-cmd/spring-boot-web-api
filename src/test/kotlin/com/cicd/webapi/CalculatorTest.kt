@@ -39,4 +39,21 @@ class CalculatorTest {
 
         assert(exception.message.equals("Cannot divide by zero"))
     }
+
+    @Test
+    fun testFactorial() {
+        val calculator = Calculator()
+        assert(calculator.factorial(5) == 120L)
+        assert(calculator.factorial(0) == 1L)
+
+        val exception: IllegalArgumentException = assertThrows(
+            IllegalArgumentException::class.java
+        ) {
+            calculator.factorial(-1)
+        }
+
+        println("Error message: ${exception.message}")
+
+        assert(exception.message.equals("Cannot calculate factorial of negative numbers"))
+    }
 }
