@@ -54,3 +54,9 @@ tasks.jacocoTestReport{
 		csv.required.set(true)
 	}
 }
+
+tasks.register("printVersion") {
+	doLast {
+		println(project.version)
+	}
+}
