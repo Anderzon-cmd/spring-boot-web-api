@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.cicd"
-version = "0.0.1-SNAPSHOT"
+version = "1.1.0"
 
 java {
 	toolchain {
